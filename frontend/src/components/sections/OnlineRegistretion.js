@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import {
   User,
   Phone,
@@ -39,11 +40,18 @@ const StudentRegistration = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    //apply logic while working with backend.
-    console.log("Registration Data:", formData);
-    // send data to backend service.
+
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/submit-form",
+        formData
+      );
+      console.log("Response from backend:", response.data);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   };
 
   return (

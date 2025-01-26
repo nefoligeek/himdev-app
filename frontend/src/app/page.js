@@ -16,9 +16,9 @@ export default function Home() {
       <HeroSection />
       <AboutUs />
       <CourseSection />
-      <Blog />
+      {/* <Blog /> */}
       <OnlineRegistretion />
-      <ContactUs />
+      {/* <ContactUs /> */}
       <Footer />
     </div>
   );
