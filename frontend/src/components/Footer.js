@@ -104,30 +104,32 @@ const Footer = () => {
 
           {/* Contact Information */}
           <div>
-            <h4 className="text-xl font-semibold mb-6 flex items-center">
-              <Shield className="mr-2" /> Contact Us
+            <h4 className="text-2xl font-bold mb-6 flex items-center">
+              <Shield className="mr-3 w-8 h-8 text-white" /> Contact Us
             </h4>
-            <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <MapPin size={20} />
-                <span className="text-white/80">
+            <div className="space-y-5">
+              <div className="flex items-start space-x-4">
+                <MapPin className="w-6 h-6 mt-1 flex-shrink-0 text-white" />
+                <span className="text-white/90 text-base">
                   Near Pramod Tiwari Hospital, Main Road Kotwali Chowk,
                   Khiriyaghat, West Champaran Bettiah (Bihar) 845438
                 </span>
               </div>
-              <div className="flex items-center space-x-3">
-                <Phone size={20} />
-                <span className="text-white/80">9452215870, 9113304680 </span>
+              <div className="flex items-center space-x-4">
+                <Phone className="w-6 h-6 text-white" />
+                <span className="text-white/90 text-base">
+                  9452215870, 9113304680
+                </span>
               </div>
-              <div className="flex items-center space-x-3">
-                <Mail size={20} />
-                <span className="text-white/80">
+              <div className="flex items-center space-x-4">
+                <Mail className="w-6 h-6 mt-1 flex-shrink-0 text-white" />
+                <span className="text-white/90 text-base">
                   himdeveducational6287@gmail.com
                 </span>
               </div>
-              <div className="flex items-center space-x-3">
-                <Clock size={20} />
-                <span className="text-white/80">
+              <div className="flex items-center space-x-4">
+                <Clock className="w-6 h-6 text-white" />
+                <span className="text-white/90 text-base">
                   Mon-Sat: 9:00 AM - 5:00 PM
                 </span>
               </div>
