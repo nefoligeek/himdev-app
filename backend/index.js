@@ -14,19 +14,17 @@ app.get("/", (req, res) => {
 
 app.use("/form", formRouter);
 
-app.listen(8000, () => {
-  console.log("Server has started.");
-
-  pool.getConnection((err, connection) => {
-    if (err) {
-      console.error("Unable to connect to the database:", err.message);
-      console.error("Error details:", err);
-      process.exit(1);
-    } else {
-      console.log(
-        "Connection to the database has been established successfully."
-      );
-      connection.release();
-    }
-  });
+pool.getConnection((err, connection) => {
+  if (err) {
+    console.error("Unable to connect to the database:", err.message);
+    console.error("Error details:", err);
+    process.exit(1);
+  } else {
+    console.log(
+      "Connection to the database has been established successfully."
+    );
+    connection.release();
+  }
 });
+
+app.listen();
