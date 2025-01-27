@@ -1,4 +1,5 @@
 import express from "express";
+import pool from "../models/index.js"; // Import the pool object
 
 const formRouter = express.Router();
 
@@ -9,7 +10,7 @@ formRouter.post("/submit-form", async (req, res) => {
   try {
     const [result] = await pool.query(
       `INSERT INTO onlineRegistration (fullName, phoneNumber, email, course, address, educationBg) 
-       VALUES (?, ?, ?, ?, ?, ?)`,
+        VALUES (?, ?, ?, ?, ?, ?)`,
       [fullName, phoneNumber, email, course, address, educationBg]
     );
 

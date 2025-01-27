@@ -55,7 +55,10 @@ const StudentRegistration = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div
+      className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8"
+      id="contact"
+    >
       <div className="max-w-4xl w-full bg-white shadow-2xl rounded-3xl overflow-hidden grid md:grid-cols-2">
         {/* Left Side - Informational Section */}
         <div className="bg-gradient-to-br from-primary to-secondary text-white p-12 flex flex-col justify-center">

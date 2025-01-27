@@ -118,14 +118,25 @@ const Footer = () => {
               <div className="flex items-center space-x-4">
                 <Phone className="w-6 h-6 text-white" />
                 <span className="text-white/90 text-base">
-                  9452215870, 9113304680
+                  <a href="tel:9452215870" className="hover:underline">
+                    9452215870
+                  </a>
+                  ,{" "}
+                  <a href="tel:9113304680" className="hover:underline">
+                    9113304680
+                  </a>
                 </span>
               </div>
+
               <div className="flex items-center space-x-4">
                 <Mail className="w-6 h-6 mt-1 flex-shrink-0 text-white" />
-                <span className="text-white/90 text-base">
+
+                <a
+                  href="mailto:himdeveducational6287@gmail.com"
+                  className="text-white/90 text-base"
+                >
                   himdeveducational6287@gmail.com
-                </span>
+                </a>
               </div>
               <div className="flex items-center space-x-4">
                 <Clock className="w-6 h-6 text-white" />
