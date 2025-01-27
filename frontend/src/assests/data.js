@@ -1,4 +1,4 @@
-import navbarLogo from "@/assests/images/transparent-logo.png";
+import navbarLogo from "@/assests/images/main-logo.png";
 import treasurerPhoto from "@/assests/images/treasurer-photo.png";
 import ceoPhoto from "@/assests/images/ceo-photo.png";
 import homePage from "@/assests/images/homePage.png";

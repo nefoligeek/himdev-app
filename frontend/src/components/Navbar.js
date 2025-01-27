@@ -1,113 +1,118 @@
-import { useState } from "react";
-import Link from "next/link";
+import React, { useState } from "react";
+import { Menu, X } from "lucide-react";
+import data from "@/assests/data";
 import Image from "next/image";
-import data from "@/assests/data.js";
+import Link from "next/link";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <nav className="bg-primary text-white shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav className="fixed top-0 left-0 right-0 bg-[#4B0082] shadow-lg z-50 transition-all duration-300 ease-in-out">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex justify-between items-center h-20 px-4 sm:px-6 lg:px-8">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link href="/">
-              <span className="text-2xl font-bold tracking-wide">
-                <Image
-                  src={data.navbarLogo}
-                  alt="Navbar Logo"
-                  width={70}
-                  height={20}
-                />
+          <div className="flex-shrink-0 transform hover:scale-105 transition-transform duration-300">
+            <Link href="/" className="flex items-center space-x-3">
+              <Image
+                src={data.navbarLogo}
+                alt="Himdev Logo"
+                className="h-12 w-auto transition-transform duration-300 hover:rotate-3"
+              />
+              <span className="text-3xl font-bold tracking-tight">
+                <span className="text-white hover:text-opacity-90 transition-colors duration-300">
+                  Himdev
+                </span>
+                <span className="text-[#008080] hover:text-opacity-90 transition-colors duration-300">
+                  {" "}
+                  Educational
+                </span>
               </span>
             </Link>
           </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
-            <Link href="/">
-              <span className="hover:text-secondary transition-colors">
-                Home
-              </span>
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex md:items-center md:space-x-8">
+            <Link
+              href="/"
+              className="text-white text-base font-medium px-4 py-2 transition-all duration-300 ease-in-out hover:text-[#008080] hover:scale-105 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#008080] after:transition-all after:duration-300 hover:after:w-full"
+            >
+              Home
             </Link>
-            <Link href="/about">
-              <span className="hover:text-secondary transition-colors">
-                About
-              </span>
-            </Link>
-            <Link href="/services">
-              <span className="hover:text-secondary transition-colors">
-                Services
-              </span>
-            </Link>
-            <Link href="/contact">
-              <span className="hover:text-secondary transition-colors">
-                Contact
-              </span>
-            </Link>
+            <a
+              href="#about"
+              className="text-white text-base font-medium px-4 py-2 transition-all duration-300 ease-in-out hover:text-[#008080] hover:scale-105 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#008080] after:transition-all after:duration-300 hover:after:w-full"
+            >
+              About
+            </a>
+            <a
+              href="#program"
+              className="text-white text-base font-medium px-4 py-2 transition-all duration-300 ease-in-out hover:text-[#008080] hover:scale-105 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#008080] after:transition-all after:duration-300 hover:after:w-full"
+            >
+              Program
+            </a>
+            <a
+              href="#contact"
+              className="text-white text-base font-medium px-4 py-2 transition-all duration-300 ease-in-out hover:text-[#008080] hover:scale-105 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#008080] after:transition-all after:duration-300 hover:after:w-full"
+            >
+              Contact
+            </a>
           </div>
 
-          {/* Hamburger Menu for Mobile */}
+          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-white focus:outline-none"
+              onClick={toggleMenu}
+              className="inline-flex items-center justify-center p-3 rounded-md text-white transition-all duration-300 ease-in-out hover:text-[#008080] hover:bg-white/10 transform hover:scale-105"
             >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {isOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16m-7 6h7"
-                  />
-                )}
-              </svg>
+              <span className="sr-only">Open main menu</span>
+              {isOpen ? (
+                <X className="block h-7 w-7" />
+              ) : (
+                <Menu className="block h-7 w-7" />
+              )}
             </button>
           </div>
         </div>
-      </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-primary">
-          <div className="space-y-2 px-2 pt-2 pb-3">
-            <Link href="/">
-              <span className="block px-3 py-2 rounded-md hover:bg-secondary hover:text-white transition">
-                Home
-              </span>
+        {/* Mobile Menu */}
+        <div
+          className={`md:hidden absolute w-full transition-all duration-300 ease-in-out ${
+            isOpen ? "opacity-100 visible" : "opacity-0 invisible h-0"
+          }`}
+        >
+          <div className="px-2 pt-2 pb-3 space-y-2 bg-[#4B0082] shadow-xl rounded-b-xl">
+            <Link
+              href="/"
+              className="block px-4 py-2 text-base font-medium text-white transition-all duration-300 ease-in-out hover:text-[#008080] hover:bg-white/10 rounded-md transform hover:translate-x-1"
+            >
+              Home
             </Link>
-            <Link href="/about">
-              <span className="block px-3 py-2 rounded-md hover:bg-secondary hover:text-white transition">
-                About
-              </span>
-            </Link>
-            <Link href="/services">
-              <span className="block px-3 py-2 rounded-md hover:bg-secondary hover:text-white transition">
-                Services
-              </span>
-            </Link>
-            <Link href="/contact">
-              <span className="block px-3 py-2 rounded-md hover:bg-secondary hover:text-white transition">
-                Contact
-              </span>
-            </Link>
+            <a
+              href="#about"
+              className="block px-4 py-2 text-base font-medium text-white transition-all duration-300 ease-in-out hover:text-[#008080] hover:bg-white/10 rounded-md transform hover:translate-x-1"
+            >
+              About
+            </a>
+            <a
+              href="#program"
+              className="block px-4 py-2 text-base font-medium text-white transition-all duration-300 ease-in-out hover:text-[#008080] hover:bg-white/10 rounded-md transform hover:translate-x-1"
+            >
+              Program
+            </a>
+            <a
+              href="#contact"
+              className="block px-4 py-2 text-base font-medium text-white transition-all duration-300 ease-in-out hover:text-[#008080] hover:bg-white/10 rounded-md transform hover:translate-x-1"
+            >
+              Contact
+            </a>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 };

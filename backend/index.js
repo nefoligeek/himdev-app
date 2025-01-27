@@ -1,8 +1,7 @@
 import express from "express";
 import formRouter from "./routes/formRouter.js";
 import pool from "./models/index.js";
-import cors from 'cors';
-
+import cors from "cors";
 
 const app = express();
 
@@ -15,13 +14,13 @@ app.get("/", (req, res) => {
 
 app.use("/form", formRouter);
 
-
 app.listen(8000, () => {
   console.log("Server has started.");
 
   pool.getConnection((err, connection) => {
     if (err) {
       console.error("Unable to connect to the database:", err.message);
+      console.error("Error details:", err);
       process.exit(1);
     } else {
       console.log(

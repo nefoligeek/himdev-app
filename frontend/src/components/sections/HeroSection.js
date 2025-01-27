@@ -11,7 +11,9 @@ import data from "@/assests/data";
 
 const HeroSection = () => {
   return (
-    <div className="relative bg-white overflow-hidden">
+    <div className="relative bg-white overflow-hidden mt-16">
+      {" "}
+      {/* Added mt-16 */}
       <div className="max-w-7xl mx-auto">
         <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
           <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
@@ -88,7 +90,6 @@ const HeroSection = () => {
           </main>
         </div>
       </div>
-
       {/* Hero Image Section */}
       <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <div className="relative h-56 sm:h-72 md:h-96 lg:h-full">

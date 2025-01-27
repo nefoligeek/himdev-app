@@ -25,7 +25,7 @@ const AboutUs = () => {
     },
   ];
   return (
-    <div className="container mx-auto px-4 py-16 space-y-16">
+    <div id="about" className="container mx-auto px-4 py-16 space-y-16">
       {/* Hero Section */}
       <section className="grid md:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
