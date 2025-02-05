@@ -151,8 +151,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-white/20 text-center">
           <p className="text-white/70">
             © {new Date().getFullYear()} Himdev Educational Foundation Trust.
-            All Rights Reserved. Designed with passion for educational
-            excellence.
+            All Rights Reserved. Designed by <a href="https://abishekn.com.np/"><u>Abishek</u></a>
           </p>
         </div>
       </div>
