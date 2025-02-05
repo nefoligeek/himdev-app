@@ -1,4 +1,7 @@
 import { Poppins } from "next/font/google";
+// app/layout.tsx
+import ogImage from "@/assests/images/college-image.png"
+
 import "./globals.css";
 
 // Configure the Poppins font
@@ -10,9 +13,18 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Himdev Educational Foundation Trust",
-  description:
-    "To provide world-class education that nurtures critical thinking, innovation, and personal growth. Our goal is to create an inclusive learning environment that prepares students to excel in a rapidly changing global landscape.",
+  title: {
+    default: 'Himdev Educational Foundation',
+    template: '%s | Empowering Education'
+  },
+  description: 'Non-profit organization dedicated to educational empowerment in India',
+  keywords: ['education NGO', 'India education', 'scholarship programs', 'himdev', 'himdev educational foundation'],
+  openGraph: {
+    images: {ogImage},
+    url: 'https://www.himdeveducationalfoundation.in',
+    type: 'website'
+  },
+  
 };
 
 export default function RootLayout({ children }) {
